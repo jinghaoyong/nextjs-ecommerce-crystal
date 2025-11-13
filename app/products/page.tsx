@@ -1,4 +1,4 @@
-export default function ProductsPage() {
+export default async function ProductsPage() {
     return (
         <div>Products page</div>
     )
