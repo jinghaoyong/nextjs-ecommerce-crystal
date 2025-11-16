@@ -3,14 +3,14 @@ import styles from "./page.module.css";
 import { stripe } from "@/lib/stripe";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Carousel } from "@/components/ui/carousel";
+import { Carousel } from "@/components/carousel";
 
 export default async function Home() {
-  const products  = await stripe.products.list({
+  const products = await stripe.products.list({
     expand: ['data.default_price'],
     limit: 5,
   });
-  console.log("Home()",products);
+  console.log("Home()", products);
   return (
     <div>
       <section className="rounded bg-neutral-100 py-8 sm:py-12">
@@ -44,8 +44,8 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section>
-        <Carousel products={products.data}/>
+      <section className="py-8">
+        <Carousel products={products.data} />
       </section>
     </div>
   );
