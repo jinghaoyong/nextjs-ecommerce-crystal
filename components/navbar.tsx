@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-// import {
-//   ShoppingCartIcon,
-//   Bars3Icon,
-//   XMarkIcon,
-// } from "@heroicons/react/24/outline";
-// import { useCartStore } from "@/store/cart-store";
+import {
+  ShoppingCartIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { useCartStore } from "@/store/cart-store";
 import { useEffect, useState } from "react";
-// import { Button } from "./ui/button";
+import { Button } from "./ui/button";
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  // const { items } = useCartStore();
-  // const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
+  const { items } = useCartStore();
+  const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,7 +41,7 @@ export const Navbar = () => {
             Checkout
           </Link>
         </div>
-        {/* <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4">
           <Link href="/checkout" className="relative">
             <ShoppingCartIcon className="h-6 w-6" />
             {cartCount > 0 && (
@@ -61,7 +61,7 @@ export const Navbar = () => {
               <Bars3Icon className="h-6 w-6" />
             )}
           </Button>
-        </div> */}
+        </div>
       </div>
       {mobileOpen && (
         <nav className="md:hidden bg-white shadow-md">
