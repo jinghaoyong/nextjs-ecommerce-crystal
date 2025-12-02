@@ -28,7 +28,29 @@ export const metadata: Metadata = {
     locale: "en-US",
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
+
+// export async function generateMetadata({params,}: any): Promise<Metadata> {
+//   const product = products[params.id as keyof typeof products];
+//   if(!product){
+//     return {
+//       title:"Product Not Found - EternalCrystal",
+//       description:"The product you are looking for does not exist.",
+//     };  
+//   }
+// }
 
 export default function RootLayout({
   children,
