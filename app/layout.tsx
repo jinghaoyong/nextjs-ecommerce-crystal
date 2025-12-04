@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "EternalCrystal",
     description: "Ecommerce website for crystals and gemstones",
-    url: "https://eternalcrystal.vercel.app",
+    url: "https://nextjs-ecommerce-crystal.vercel.app/",
     siteName: "EternalCrystal",
     images: [
       {

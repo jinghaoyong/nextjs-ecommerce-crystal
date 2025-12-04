@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: "/admin",
         }],
-        sitemap: "https://eternalcrystal.vercel.app/sitemap.xml",
+        sitemap: "https://nextjs-ecommerce-crystal.vercel.app//sitemap.xml",
     };
 }
