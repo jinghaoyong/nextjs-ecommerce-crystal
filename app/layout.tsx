@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 
+const params = "example";
 
 export const metadata: Metadata = {
   title: "EternalCrystal",
@@ -39,6 +40,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: `https://nextjs-ecommerce-crystal.vercel.app/${params}`,
   },
 };
 
