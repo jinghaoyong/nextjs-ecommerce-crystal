@@ -11,8 +11,15 @@ export default async function Home() {
     limit: 5,
   });
   console.log("Home()", products);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "My Ecommerce",
+    url: "https://myecommerce.com",
+  };
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="rounded bg-neutral-100 py-8 sm:py-12">
         <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
           <div className="max-w-md space-y-4">
