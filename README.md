@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 -- tasks
 = base on the youtube info given, do all the steps mentioned using cursor (faster)
 = see what if want to linked with live stripe, is it needed with company registered number etc
+= make producst and about us right side
