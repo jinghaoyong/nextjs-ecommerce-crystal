@@ -34,7 +34,7 @@ export default async function ProductPage({
     },
     offers: {
       "@type": "Offer",
-      url: `https://www.yourdomain.com/products/${plainProduct.id}`,
+      url: `https://nextjs-ecommerce-crystal.vercel.app/products/${plainProduct.id}`,
       priceCurrency: priceData.currency.toUpperCase(),
       price: priceData.unit_amount ? priceData.unit_amount / 100 : 0,
       availability: "https://schema.org/InStock",
@@ -53,14 +53,14 @@ export default async function ProductPage({
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://www.yourdomain.com/products/${plainProduct.id}`} />
+        <link rel="canonical" href={`https://nextjs-ecommerce-crystal.vercel.app/products/${plainProduct.id}`} />
 
         {/* Open Graph */}
         <meta property="og:type" content="product" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         {plainProduct.images[0] && <meta property="og:image" content={plainProduct.images[0]} />}
-        <meta property="og:url" content={`https://www.yourdomain.com/products/${plainProduct.id}`} />
+        <meta property="og:url" content={`https://nextjs-ecommerce-crystal.vercel.app/products/${plainProduct.id}`} />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
