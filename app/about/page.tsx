@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "About Us | EternalCrystal – Malaysia Crystal Shop & Healing Bracelets",
     description:
       "We offer crystals, natural stones, customised bracelets and energy-matched stones. Delivery to all Malaysia & Singapore.",
-    url: "https://yourdomain.com/about",
+    url: "https://nextjs-ecommerce-crystal.vercel.app/about",
     siteName: "EternalCrystal",
     locale: "en_MY",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Your trusted Malaysia crystal shop. We craft personalised energy bracelets and deliver across MY & SG.",
   },
   alternates: {
-    canonical: "https://yourdomain.com/about",
+    canonical: "https://nextjs-ecommerce-crystal.vercel.app/about",
   },
 };
 
@@ -52,12 +52,12 @@ export default function AboutPage() {
             name: "EternalCrystal",
             description:
               "Malaysia-based crystal shop offering natural crystals, healing bracelets, and custom-made crystal designs.",
-            url: "https://yourdomain.com",
-            image: "https://yourdomain.com/og-image.jpg",
+            url: "https://nextjs-ecommerce-crystal.vercel.app",
+            image: "https://nextjs-ecommerce-crystal.vercel.app/og-image.jpg",
             telephone: "+60-XXX-XXXXXX",
             address: { "@type": "PostalAddress", addressCountry: "MY" },
             sameAs: [
-              "https://instagram.com/xxx",
+              "https://www.instagram.com/eternalcrystal_/",
               "https://facebook.com/xxx",
               "https://www.xiaohongshu.com/user/xxx",
             ],
@@ -222,10 +222,10 @@ export default function AboutPage() {
         <div className="mt-10">
           <h2 className="text-2xl font-semibold mb-3">Contact & Social Media</h2>
           <p>
-            WhatsApp: <a href="https://wa.me/60XXXXXXXXX" className="text-green-600 underline">+60 XXX XXXX</a>
+            WhatsApp: <a href="https://wa.me/60107640926" className="text-green-600 underline">+60 XXX XXXX</a>
           </p>
           <p>
-            Instagram: <a href="https://instagram.com/xxx" className="text-blue-600 underline">instagram.com/xxx</a>
+            Instagram: <a href="https://www.instagram.com/eternalcrystal_/" className="text-blue-600 underline">instagram.com/xxx</a>
           </p>
           <p>
             Facebook: <a href="https://facebook.com/xxx" className="text-blue-600 underline">facebook.com/xxx</a>
