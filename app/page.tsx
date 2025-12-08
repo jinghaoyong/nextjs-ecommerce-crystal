@@ -19,8 +19,8 @@ export default async function Home() {
       {
         "@type": "Organization",
         name: "EternalCrystal",
-        url: "https://myecommerce.com",
-        logo: "https://myecommerce.com/logo.png",
+        url: "https://nextjs-ecommerce-crystal.vercel.app",
+        logo: "https://nextjs-ecommerce-crystal.vercel.app/logo.png",
         sameAs: [
           "https://instagram.com/xxx",
           "https://facebook.com/xxx",
@@ -29,11 +29,11 @@ export default async function Home() {
       },
       {
         "@type": "WebSite",
-        url: "https://myecommerce.com",
+        url: "https://nextjs-ecommerce-crystal.vercel.app",
         name: "EternalCrystalStore",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://myecommerce.com/products?search={search_term_string}",
+          target: "https://nextjs-ecommerce-crystal.vercel.app/products?search={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
@@ -42,7 +42,7 @@ export default async function Home() {
         itemListElement: products.data.map((product, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          url: `https://myecommerce.com/products/${product.id}`
+          url: `https://nextjs-ecommerce-crystal.vercel.app/products/${product.id}`
         }))
       }
     ]

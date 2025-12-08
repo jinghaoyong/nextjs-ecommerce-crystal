@@ -36,6 +36,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 -- tasks
-= base on the youtube info given, do all the steps mentioned using cursor (faster)
-= see what if want to linked with live stripe, is it needed with company registered number etc
-= make producst and about us right side
+= ✅base on the youtube info given, do all the steps mentioned using cursor (faster) 
+= ✅see what if want to linked with live stripe, is it needed with company registered number etc
+= ✅make producst and about us right side
+= register malaysia enterprise 
+site:nextjs-ecommerce-crystal.vercel.app

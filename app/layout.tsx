@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: `https://nextjs-ecommerce-crystal.vercel.app/${params}`,
+    canonical: `https://nextjs-ecommerce-crystal.vercel.app/`,
   },
 };
 
