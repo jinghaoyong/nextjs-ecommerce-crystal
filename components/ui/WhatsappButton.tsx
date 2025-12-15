@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsappButton() {
-  const phoneNumber = "60123456789"; // change this
+  const phoneNumber = "60107640926"; // change this
   const message = "Hello! I would like to know more!";
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -15,18 +15,11 @@ export default function WhatsappButton() {
 
   useEffect(() => {
     const hasCompletedGuide = localStorage.getItem("whatsapp_guide_done");
-
-    // if (!hasCompletedGuide) {
-      setShowGuide(true);
-    // }
+    if (!hasCompletedGuide) 
+        setShowGuide(true);
   }, []);
 
-  const handleClickWhatsApp = () => {
-    localStorage.setItem("whatsapp_guide_done", "true");
-    setShowGuide(false);
-  };
-
-  const handleSkip = () => {
+  const finishGuide = () => {
     localStorage.setItem("whatsapp_guide_done", "true");
     setShowGuide(false);
   };
@@ -38,7 +31,7 @@ export default function WhatsappButton() {
         href={whatsappURL}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleClickWhatsApp}
+        onClick={finishGuide}
         className={`fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-50 ${
           showGuide ? "animate-pulse scale-110" : ""
         }`}
@@ -47,28 +40,27 @@ export default function WhatsappButton() {
         <FaWhatsapp size={32} />
       </a>
 
-      {/* Onboarding Guide */}
+      {/* Guide Bubble — No blur, no blocking, clean */}
       {showGuide && (
-        <>
-          {/* Dark Overlay */}
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"></div>
+        <div
+          className="fixed z-50 flex flex-col items-end"
+          style={{
+            bottom: "95px", // stays right above the button
+            right: "5px",
+          }}
+        >
+          <div className="relative bg-white text-black px-4 py-3 rounded-lg shadow-xl border border-gray-200 max-w-[260px]">
+            {/* Close icon */}
+            <button
+              onClick={finishGuide}
+              className="absolute -top-2 -right-2 bg-gray-200 text-gray-600 rounded-full w-6 h-6 flex items-center justify-center text-sm hover:bg-gray-300"
+            >
+              ✕
+            </button>
 
-          {/* Instruction Bubble */}
-          <div className="fixed bottom-32 right-5 bg-white text-black px-4 py-2 rounded-lg shadow-lg z-50">
-            👇 Tap here to chat with us!
+            Tap here to chat with us! 👇 
           </div>
-
-          {/* Skip Button */}
-          <button
-            onClick={handleSkip}
-            className="fixed bottom-5 left-5 bg-gray-200 text-black px-4 py-2 rounded-lg shadow-lg z-50 hover:bg-gray-300"
-          >
-            Skip / Close
-          </button>
-
-          {/* Click Blocker (prevents clicking anything except button or skip) */}
-          <div className="fixed inset-0 z-40"></div>
-        </>
+        </div>
       )}
     </>
   );
