@@ -40,5 +40,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 = ✅see what if want to linked with live stripe, is it needed with company registered number etc
 = ✅make producst and about us right side
 = register malaysia enterprise 
-= blog, how good is blog, is it stay active to post is good ?
+= blog, how good is blog, is it stay active to post is good?
+= Add your site to Google Search Console.
 site:nextjs-ecommerce-crystal.vercel.app
