@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `https://nextjs-ecommerce-crystal.vercel.app/`,
   },
+  verification: {
+    google: "7kkqrRDvvxJSkH99YSie9"
+  },
 };
 
 // export async function generateMetadata({params,}: any): Promise<Metadata> {
