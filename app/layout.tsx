@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     canonical: `https://nextjs-ecommerce-crystal.vercel.app/`,
   },
   verification: {
-    google: "7kkqrRDvvxJSkH99YSie9"
+    google: "7kkqrRDvvxJSkH99YSie9ewtR"
   },
 };
 
