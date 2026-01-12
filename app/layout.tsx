@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
+// import { Navbar } from "@/components/navbar";
+import Navbar from "@/components/navbar";
 import Script from "next/script";
 import WhatsappButton from "@/components/ui/WhatsappButton";
 

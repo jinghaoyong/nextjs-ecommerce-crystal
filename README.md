@@ -38,8 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 -- tasks
 = ✅base on the youtube info given, do all the steps mentioned using cursor (faster) 
 = ✅see what if want to linked with live stripe, is it needed with company registered number etc
-= ✅make producst and about us right side
+= make producst and about us right side
 = register malaysia enterprise 
 = blog, how good is blog, is it stay active to post is good?
 = Add your site to Google Search Console.
+= change from mdx to normal page
 site:nextjs-ecommerce-crystal.vercel.app
