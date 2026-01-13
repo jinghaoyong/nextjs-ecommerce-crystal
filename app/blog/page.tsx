@@ -16,7 +16,7 @@ export default function BlogPage() {
       <h1 className="text-4xl font-bold mb-8">Crystal Guides & Blog</h1>
 
       <ul className="space-y-6">
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <li key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}

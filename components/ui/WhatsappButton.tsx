@@ -15,8 +15,9 @@ export default function WhatsappButton() {
 
   useEffect(() => {
     const hasCompletedGuide = localStorage.getItem("whatsapp_guide_done");
-    if (!hasCompletedGuide) 
-        setShowGuide(true);
+    if (!hasCompletedGuide) {
+      setShowGuide(true);
+    }
   }, []);
 
   const finishGuide = () => {
@@ -32,9 +33,8 @@ export default function WhatsappButton() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={finishGuide}
-        className={`fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-50 ${
-          showGuide ? "animate-pulse scale-110" : ""
-        }`}
+        className={`fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:bg-green-600 transition-all z-50 ${showGuide ? "animate-pulse scale-110" : ""
+          }`}
         style={{ width: "60px", height: "60px" }}
       >
         <FaWhatsapp size={32} />
@@ -58,7 +58,7 @@ export default function WhatsappButton() {
               ✕
             </button>
 
-            Tap here to chat with us! 👇 
+            Tap here to chat with us! 👇
           </div>
         </div>
       )}
