@@ -11,14 +11,11 @@ export default function WhatsappButton() {
     message
   )}`;
 
-  const [showGuide, setShowGuide] = useState(false);
-
-  useEffect(() => {
-    const hasCompletedGuide = localStorage.getItem("whatsapp_guide_done");
-    if (!hasCompletedGuide) {
-      setShowGuide(true);
-    }
-  }, []);
+  // ✅ Lazy initializer (runs once, React-safe)
+  const [showGuide, setShowGuide] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !localStorage.getItem("whatsapp_guide_done");
+  });
 
   const finishGuide = () => {
     localStorage.setItem("whatsapp_guide_done", "true");
