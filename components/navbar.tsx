@@ -7,19 +7,40 @@ import {
   Bars3Icon,
   XMarkIcon,
   ShoppingCartIcon,
+  Squares2X2Icon,
+  InformationCircleIcon,
+  PencilSquareIcon,
 } from "@heroicons/react/24/outline";
+
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { SiXiaohongshu } from "react-icons/si";
+
 import { Button } from "@/components/ui/button";
 import clsx from "clsx";
+
 
 export default function Navbar({ cartCount = 0 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
   const navItems = [
-    { label: "Products", href: "/products" },
-    { label: "About Us", href: "/about" },
-    { label: "Blogs", href: "/blog" },
+    {
+      label: "Products",
+      href: "/products",
+      icon: Squares2X2Icon,
+    },
+    {
+      label: "About Us",
+      href: "/about",
+      icon: InformationCircleIcon,
+    },
+    {
+      label: "Blogs",
+      href: "/blog",
+      icon: PencilSquareIcon,
+    },
   ];
+
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
@@ -27,57 +48,71 @@ export default function Navbar({ cartCount = 0 }) {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
       {/* ===== TOP BAR ===== */}
-      <div className="hidden md:flex items-center justify-between px-6 py-2 text-sm text-gray-500">
-        <div className="flex gap-4">
-          <a className="hover:text-blue-600" href="#">FB</a>
-          <a className="hover:text-blue-600" href="#">IG</a>
-          <a className="hover:text-blue-600" href="#">TT</a>
+      <div className="hidden md:flex relative items-center px-6 py-2 text-sm text-gray-500">
+        {/* Left socials */}
+        <div className="flex gap-4 items-center">
+          <a className="hover:text-[#536B8F] transition-colors" href="#">
+            <FaFacebookF className="h-4 w-4" />
+          </a>
+          <a className="hover:text-[#536B8F] transition-colors" href="#">
+            <FaInstagram className="h-4 w-4" />
+          </a>
+          <a className="hover:text-[#536B8F] transition-colors" href="#">
+            <SiXiaohongshu className="h-4 w-4" />
+          </a>
         </div>
 
-        <p className="font-medium text-blue-600">
-          10% OFF FIRST ORDER — CODE: DA10OFF
+
+        {/* TRUE CENTER promo */}
+        <p className="absolute left-1/2 -translate-x-1/2 font-medium tracking-wide text-[#536B8F]">
+          10% OFF FIRST ORDER — CODE: <span className="font-semibold">DA10OFF</span>
         </p>
 
-        <input
-          placeholder="Search products..."
-          className="border rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-blue-500"
-        />
+        {/* Right search */}
+        <div className="ml-auto">
+          <input
+            placeholder="Search products..."
+            className="border rounded-full px-4 py-1 text-sm focus:ring-1 focus:ring-[#536B8F]"
+          />
+        </div>
       </div>
 
+
       {/* ===== MAIN NAV ===== */}
-      <div className="mx-auto flex items-center justify-between px-4 py-4">
+      <div className="relative mx-auto flex items-center px-4 py-4">
+
         {/* Logo */}
         <Link href="/" className="text-xl font-bold tracking-wide">
           Eternal<span className="text-blue-600">Crystal</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={clsx(
-                "relative font-medium transition-colors",
-                isActive(item.href)
-                  ? "text-blue-600 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-blue-600"
-                  : "text-gray-600 hover:text-blue-600"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={clsx(
+                  "flex items-center gap-3 text-lg",
+                  isActive(item.href)
+                    ? "text-[#536B8F] font-semibold"
+                    : "text-gray-700"
+                )}
+              >
+                <item.icon className="h-5 w-5" />
+                {item.label}
+              </Link>
 
-          {/* <Link
-            href="/products"
-            className="ml-4 rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition"
-          >
-            Shop Now
-          </Link> */}
+            );
+          })}
         </nav>
 
+
         {/* Right Icons */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-1 justify-end items-center gap-4">
           <Link href="/checkout" className="relative">
             <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
             {cartCount > 0 && (
@@ -99,6 +134,7 @@ export default function Navbar({ cartCount = 0 }) {
             )}
           </Button>
         </div>
+
       </div>
 
       {/* ===== MOBILE MENU ===== */}
