@@ -155,6 +155,41 @@ export default function Navbar({ cartCount = 0 }) {
           </Button>
         </div>
       </div>
+      {/* ===== MOBILE MENU ===== */}
+{mobileOpen && (
+  <nav className="md:hidden border-t bg-white">
+    <ul className="flex flex-col gap-4 px-6 py-6">
+      {navItems.map((item) => {
+        const Icon = item.icon;
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={() => setMobileOpen(false)}
+            className={clsx(
+              "flex items-center gap-3 text-lg",
+              isActive(item.href)
+                ? "text-[#536B8F] font-semibold"
+                : "text-gray-700"
+            )}
+          >
+            <Icon className="h-5 w-5" />
+            {item.label}
+          </Link>
+        );
+      })}
+
+      <Link
+        href="/products"
+        onClick={() => setMobileOpen(false)}
+        className="mt-4 rounded-full bg-blue-600 py-3 text-center text-white font-semibold"
+      >
+        Shop Now
+      </Link>
+    </ul>
+  </nav>
+)}
+
     </header>
   );
 }
