@@ -4,28 +4,32 @@ import Script from "next/script";
 import type { Metadata } from "next";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   return {
     title: post.frontMatter.title,
     description: post.frontMatter.description,
     keywords: post.frontMatter.keywords,
     alternates: {
-      canonical: `https://yourdomain.com/blog/${params.slug}`,
+      canonical: `https://yourdomain.com/blog/${slug}`,
     },
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = getPostBySlug(params.slug);
+
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   return (
     <>
-      {/* Article Schema */}
       <Script
         type="application/ld+json"
         id="article-jsonld"
@@ -50,3 +54,4 @@ export default function BlogPostPage({ params }: Props) {
     </>
   );
 }
+
