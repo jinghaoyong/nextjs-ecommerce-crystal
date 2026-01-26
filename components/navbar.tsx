@@ -71,9 +71,33 @@ export default function Navbar({ cartCount = 0 }) {
       <div className="hidden md:flex relative items-center px-6 py-2 text-sm text-gray-500">
         {/* Left socials */}
         <div className="flex gap-4 items-center">
-          <FaFacebookF className="h-4 w-4 hover:text-[#536B8F]" />
-          <FaInstagram className="h-4 w-4 hover:text-[#536B8F]" />
-          <SiXiaohongshu className="h-4 w-4 hover:text-[#536B8F]" />
+          {/* <a
+            href="https://www.facebook.com/yourpage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer hover:text-[#536B8F]"
+          >
+            <FaFacebookF className="h-4 w-4" />
+          </a> */}
+
+
+          <a
+            href="https://www.instagram.com/eternalcrystal_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer hover:text-[#536B8F]"
+          >
+            <FaInstagram className="h-4 w-4" />
+          </a>
+          
+          <a
+            href="https://xhslink.com/m/5Te6oJtVVS8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer hover:text-[#536B8F]"
+          >
+            <SiXiaohongshu className="h-4 w-4" />
+          </a>
         </div>
 
         {/* TRUE CENTER promo (do NOT animate this container) */}
@@ -107,9 +131,15 @@ export default function Navbar({ cartCount = 0 }) {
 
       {/* ===== MAIN NAV ===== */}
       <div className="relative mx-auto flex items-center px-4 py-4">
-        <Link href="/" className="text-xl font-bold tracking-wide">
-          Eternal<span className="text-blue-600">Crystal</span>
-        </Link>
+        <Link
+  href="/"
+  className="text-xl tracking-wide flex items-center gap-1"
+>
+  {/* <span className="font-light text-[#536B8F]"></span> */}
+  <span className="font-extrabold text-[#536B8F] drop-shadow-[0_1px_2px_rgba(83,107,143,0.4)]">
+    Eternal Crystal
+  </span>
+</Link>
 
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 gap-8">
           {navItems.map((item) => {
@@ -156,39 +186,39 @@ export default function Navbar({ cartCount = 0 }) {
         </div>
       </div>
       {/* ===== MOBILE MENU ===== */}
-{mobileOpen && (
-  <nav className="md:hidden border-t bg-white">
-    <ul className="flex flex-col gap-4 px-6 py-6">
-      {navItems.map((item) => {
-        const Icon = item.icon;
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={() => setMobileOpen(false)}
-            className={clsx(
-              "flex items-center gap-3 text-lg",
-              isActive(item.href)
-                ? "text-[#536B8F] font-semibold"
-                : "text-gray-700"
-            )}
-          >
-            <Icon className="h-5 w-5" />
-            {item.label}
-          </Link>
-        );
-      })}
+      {mobileOpen && (
+        <nav className="md:hidden border-t bg-white">
+          <ul className="flex flex-col gap-4 px-6 py-6">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={clsx(
+                    "flex items-center gap-3 text-lg",
+                    isActive(item.href)
+                      ? "text-[#536B8F] font-semibold"
+                      : "text-gray-700"
+                  )}
+                >
+                  <Icon className="h-5 w-5" />
+                  {item.label}
+                </Link>
+              );
+            })}
 
-      <Link
-        href="/products"
-        onClick={() => setMobileOpen(false)}
-        className="mt-4 rounded-full bg-blue-600 py-3 text-center text-white font-semibold"
-      >
-        Shop Now
-      </Link>
-    </ul>
-  </nav>
-)}
+            <Link
+              href="/products"
+              onClick={() => setMobileOpen(false)}
+              className="mt-4 rounded-full bg-blue-600 py-3 text-center text-white font-semibold"
+            >
+              Shop Now
+            </Link>
+          </ul>
+        </nav>
+      )}
 
     </header>
   );
