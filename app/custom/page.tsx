@@ -177,7 +177,8 @@ export default function CustomPage() {
             Contact us on WhatsApp and we will guide you personally.
           </p>
           <Link
-            href="https://wa.me/60XXXXXXXXX"
+            href="https://wa.me/60107640926"
+            target="_blank"
             className="inline-block bg-green-600 text-white px-6 py-3 rounded font-medium"
           >
             WhatsApp Us Now

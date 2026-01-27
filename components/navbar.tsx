@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
-  Bars3Icon,
-  XMarkIcon,
-  ShoppingCartIcon,
-  InformationCircleIcon,
-  PencilSquareIcon,
-  SparklesIcon,
+Bars3Icon,
+XMarkIcon,
+ShoppingCartIcon,
+InformationCircleIcon,
+PencilSquareIcon,
+SparklesIcon,
+AdjustmentsVerticalIcon,
 } from "@heroicons/react/24/outline";
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -30,6 +31,7 @@ export default function Navbar({ cartCount = 0 }) {
     { label: "Products", href: "/products", icon: SparklesIcon },
     { label: "About Us", href: "/about", icon: InformationCircleIcon },
     { label: "Blogs", href: "/blog", icon: PencilSquareIcon },
+    { label: "Custom", href: "/custom", icon: AdjustmentsVerticalIcon },
   ];
 
   const isActive = (href: string) =>

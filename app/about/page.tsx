@@ -13,7 +13,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl px-6 text-center space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-neutral-200 px-4 py-1 text-sm">
             <Sparkles className="h-4 w-4" />
-            About EternalCrystal
+            About Eternal Crystal
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
@@ -126,30 +126,27 @@ export default function AboutPage() {
               WhatsApp:{" "}
               <a
                 href="https://wa.me/60107640926"
+                target="_blank"
                 className="text-green-600 underline"
               >
-                +60 XXX XXXX
+                Chat In WhatsApp
               </a>
             </p>
             <p>
               Instagram:{" "}
               <a
                 href="https://www.instagram.com/eternalcrystal_/"
+                target="_blank"
                 className="text-blue-600 underline"
               >
                 @eternalcrystal_
               </a>
             </p>
             <p>
-              Facebook:{" "}
-              <a href="https://facebook.com/xxx" className="text-blue-600 underline">
-                EternalCrystal
-              </a>
-            </p>
-            <p>
               XiaoHongShu:{" "}
               <a
-                href="https://www.xiaohongshu.com/user/xxx"
+                href="https://xhslink.com/m/5Te6oJtVVS8"
+                target="_blank"
                 className="text-red-500 underline"
               >
                 小红书

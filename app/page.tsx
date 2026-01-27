@@ -53,10 +53,16 @@ export default async function Home() {
               Premium Natural Crystals
             </div>
 
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Welcome to <span className="text-neutral-900">EternalCrystal</span>
-            </h1>
-
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl leading-tight">
+Welcome to
+<br />
+<span className="relative inline-block mt-2 font-extrabold
+bg-gradient-to-r from-[#4F628E] to-[#6F85B8]
+bg-clip-text text-transparent
+drop-shadow-[0_1px_2px_rgba(79,98,142,0.35)]">
+Eternal Crystal
+</span>
+</h1>
             <p className="text-neutral-600 max-w-xl mx-auto md:mx-0">
               Discover high-quality crystals and healing bracelets at the best prices.
               Delivery across Malaysia & Singapore.
