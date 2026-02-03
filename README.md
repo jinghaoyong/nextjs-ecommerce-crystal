@@ -44,4 +44,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 = Add your site to Google Search Console.
 = change from mdx to normal page
 = navbar color change to etternal crystal blue , when selected no underline , jsut color change, the promo text code in middle , then try insert icon for only one the most attentioned needed tab, then try insert more and more icon for fb and those stuff
+= whatsapp default message
+= add more items into stripe
+
 site:nextjs-ecommerce-crystal.vercel.app
